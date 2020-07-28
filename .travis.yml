@@ -10,8 +10,6 @@ addons:
   sonarcloud:
     organization: "apecr-github"
 
-jdk:
-  - oraclejdk8
 script:
   - npm test
   - npm run coverage
