@@ -1,0 +1,9 @@
+{
+  "name": "expressworks",
+  "version": "0.0.1",
+  "description": "Node School expressworks (Learn the basics of the Express.js framework.",
+  "main": "index.js",
+  "repository": "https://github.com/apecr/expressworks",
+  "author": "Alberto Eyo",
+  "license": "MIT"
+}
