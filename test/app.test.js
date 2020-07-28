@@ -11,5 +11,14 @@ describe('Application', () => {
         expect(response.text).toEqual('Hello World!')
       })
     })
+    describe('index.html GET', () => {
+      it('Should return index.html file', async() => {
+        const response = await request(app).get('/index.html')
+        expect(response.statusCode).toEqual(200)
+        expect(response.text).toContain('<html>')
+        expect(response.text).toContain('<title>expressworks</title>')
+        expect(response.headers['content-type']).toContain('text/html')
+      })
+    })
   })
 })

@@ -1,9 +1,12 @@
 const express = require('express')
+const { getConfigPropertyByEnv } = require('./src/utils/resolve_env')
+
 const app = express()
 
+app.use(express.static(getConfigPropertyByEnv(process.env.NODE_ENV, 'staticDir')))
 app.get('/home', function(req, res) {
   res.end('Hello World!')
 })
-app.listen(!isNaN(process.argv[2]) ? process.argv[2] : 3000)
+app.listen(getConfigPropertyByEnv(process.env.NODE_ENV, 'port'))
 
 module.exports = app
